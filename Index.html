@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Anual Interactivo - Colegio Montano</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3C88;
+        }
+        /* Custom scrollbar and animations */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3F72AF;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white">
+
+    <!-- Top Navigation / Header Bar (#1F3C88) -->
+    <header class="bg-[#1F3C88] text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Logo and Identifiers -->
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-start">
+                <img src="https://admisiones.colegiomontano.edu.gt/assets/img/logo-cm-blanco.webp" alt="Logo Colegio Montano" style="max-height: 50px;" class="object-contain" onerror="this.src='https://placehold.co/150x50/1F3C88/FFFFFF?text=Colegio+Montano'">
+                <div>
+                    <h1 class="text-lg font-bold tracking-wide">Emprendimiento para la Productividad II</h1>
+                    <p class="text-xs text-[#F2C94C] font-semibold"><i>Segundo Básico | Docente: Mélida García | Ciclo Escolar: 2027</i></p>
+                </div>
+            </div>
+
+            <!-- Fullscreen Button -->
+            <button onclick="toggleFullscreen()" class="bg-[#F2C94C] text-[#1F3C88] hover:bg-yellow-400 font-bold px-4 py-2 rounded-lg text-sm shadow transition duration-200 flex items-center gap-2">
+                <span>🖥️</span> <i>Pantalla Completa</i>
+            </button>
+        </div>
+
+        <!-- Horizontal Tabs Navigation -->
+        <nav class="bg-[#3F72AF] px-4 overflow-x-auto">
+            <div class="max-w-7xl mx-auto flex space-x-1 py-2 text-sm font-semibold whitespace-nowrap">
+                <button onclick="switchTab('descriptor')" id="btn-descriptor" class="tab-btn px-4 py-2 rounded-t-lg bg-[#F2C94C] text-[#1F3C88] shadow transition"><i>I) Descriptor</i></button>
+                <button onclick="switchTab('objetivos')" id="btn-objetivos" class="tab-btn px-4 py-2 rounded-t-lg text-white hover:bg-[#1F3C88]/50 transition"><i>II) Objetivos</i></button>
+                <button onclick="switchTab('competencias')" id="btn-competencias" class="tab-btn px-4 py-2 rounded-t-lg text-white hover:bg-[#1F3C88]/50 transition"><i>III) Competencias</i></button>
+                <button onclick="switchTab('indicadores')" id="btn-indicadores" class="tab-btn px-4 py-2 rounded-t-lg text-white hover:bg-[#1F3C88]/50 transition"><i>IV) Indicadores</i></button>
+                <button onclick="switchTab('metodos')" id="btn-metodos" class="tab-btn px-4 py-2 rounded-t-lg text-white hover:bg-[#1F3C88]/50 transition"><i>V) Métodos</i></button>
+                <button onclick="switchTab('bibliografia')" id="btn-bibliografia" class="tab-btn px-4 py-2 rounded-t-lg text-white hover:bg-[#1F3C88]/50 transition"><i>VI) Bibliografía</i></button>
+                <button onclick="switchTab('contenidos')" id="btn-contenidos" class="tab-btn px-4 py-2 rounded-t-lg text-white hover:bg-[#1F3C88]/50 transition"><i>VII) Contenidos</i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Dashboard Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-6 md:p-8 bg-white">
+
+        <!-- TAB I: DESCRIPTOR -->
+        <section id="tab-descriptor" class="tab-content space-y-6">
+            <div class="border-l-4 border-[#F2C94C] pl-4">
+                <h2 class="text-2xl font-bold text-[#1F3C88]"><i>I) Descriptor del Curso</i></h2>
+                <p class="text-xs text-[#3F72AF]"><i>Área de Hogar - Segundo Básico (Unidad Única)</i></p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                <p><i>Este es un curso teórico práctico, que se complementa con tres componentes: contabilidad, artes industriales y Educación para el hogar. Los estudiantes del grado de Segundo Básico reciben el área de Educación para el hogar en la unidad dos según el plan general del Colegio Montano, es por esta razón que en este plan solamente aparecen los contenidos de Unidad II.</i></p>
+                <p><i>El área desarrolla competencias y actitudes que permiten a los estudiantes realizar emprendimientos por medio de la transformación de productos, atendiendo a las necesidades con ideas creativas. Brinda herramientas, métodos y técnicas orientadas a la ejecución de proyectos desde la teoría a la práctica, mediante el trabajo individual y en equipo, con el propósito de identificar propuestas para la mejora de la calidad de vida.</i></p>
+                <p><i>Se orienta hacia la formación integral del ser humano, ya que permite a los estudiantes participar activamente en procesos de desarrollo económico, social y cultural en su entorno familiar, escolar y comunitario. Propicia la vivencia de la interculturalidad, la equidad social y la de género, el respeto a la diversidad y el aprendizaje intergeneracional.</i></p>
+                <p><i>Por otra parte, fomenta el liderazgo mediante procesos de autogestión de proyectos productivos sustentables y sostenibles, con bases económicas y financieras planificadas y presupuestadas que promuevan una economía saludable. Propicia el uso de tecnologías de la información y la comunicación, así como las tecnologías productivas, culturalmente diversas y pertinentes en múltiples ámbitos.</i></p>
+                <p><i>Los proyectos tienen como base la responsabilidad social y el análisis del entorno, tomando en cuenta los principios éticos y ambientales para mantener un equilibrio sostenible. En estos se considera, tanto el trabajo intelectual como el material en las diversas formas de organización de procesos productivos.</i></p>
+                <p><i>Dentro de los cambios en el nuevo diseño del área, se han incluido tres componentes que desarrollan aprendizajes para promover iniciativas creativas e innovadoras en la formulación y ejecución de proyectos sin perder de vista las tecnologías alternativas que fomentan el desarrollo sostenible con una responsabilidad individual y social mediante el manejo inteligente de la administración de recursos económicos y financieros. El emprendimiento se proyecta en los estudiantes para convertirlos en generadores de soluciones y mejorar su calidad de vida.</i></p>
+                <p><i>Dentro del nuevo enfoque queda establecido que la diferencia de género es cosa del pasado, hombres y mujeres comparten un espacio en común para alcanzar competencias que garantizan aprendizajes significativos para la vida y se desenvuelven como líderes emprendedores con una visión autogestora y con las mismas oportunidades para alcanzar el éxito.</i></p>
+            </div>
+        </section>
+
+        <!-- TAB II: OBJETIVOS GENERALES -->
+        <section id="tab-objetivos" class="tab-content hidden space-y-6">
+            <div class="border-l-4 border-[#F2C94C] pl-4">
+                <h2 class="text-2xl font-bold text-[#1F3C88]"><i>II) Objetivos Generales</i></h2>
+                <p class="text-xs text-[#3F72AF]"><i>Propósitos formativos institucionales</i></p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-blue-50/50 border border-blue-100 p-5 rounded-xl shadow-sm flex flex-col justify-between">
+                    <div class="text-[#1F3C88] text-xl mb-2 font-bold">🎯</div>
+                    <p class="text-slate-700"><i>Desarrollar habilidades y destrezas motoras básicas.</i></p>
+                </div>
+                <div class="bg-blue-50/50 border border-blue-100 p-5 rounded-xl shadow-sm flex flex-col justify-between">
+                    <div class="text-[#1F3C88] text-xl mb-2 font-bold">⏱️</div>
+                    <p class="text-slate-700"><i>Motivar el interés en el aprovechamiento del tiempo.</i></p>
+                </div>
+                <div class="bg-blue-50/50 border border-blue-100 p-5 rounded-xl shadow-sm flex flex-col justify-between">
+                    <div class="text-[#1F3C88] text-xl mb-2 font-bold">🚀</div>
+                    <p class="text-slate-700"><i>Encausar el liderazgo y la proactividad.</i></p>
+                </div>
+                <div class="bg-blue-50/50 border border-blue-100 p-5 rounded-xl shadow-sm flex flex-col justify-between">
+                    <div class="text-[#1F3C88] text-xl mb-2 font-bold">💡</div>
+                    <p class="text-slate-700"><i>Colaborar en la formación del carácter del adolescente, incentivar su creatividad.</i></p>
+                </div>
+                <div class="bg-blue-50/50 border border-blue-100 p-5 rounded-xl shadow-sm flex flex-col justify-between md:col-span-2">
+                    <div class="text-[#1F3C88] text-xl mb-2 font-bold">⚖️</div>
+                    <p class="text-slate-700"><i>Fomentar la no diferencia de género: hombres y mujeres comparten un espacio en común para alcanzar competencias que garantizan aprendizajes significativos para la vida.</i></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB III: COMPETENCIAS -->
+        <section id="tab-competencias" class="tab-content hidden space-y-6">
+            <div class="border-l-4 border-[#F2C94C] pl-4">
+                <h2 class="text-2xl font-bold text-[#1F3C88]"><i>III) Competencias</i></h2>
+                <p class="text-xs text-[#3F72AF]"><i>Competencias Académicas del Área y Competencias CM Integradas</i></p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold text-[#3F72AF] mb-4"><i>Competencias Académicas del Área</i></h3>
+                    <ul class="space-y-3 text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">▪️</span>
+                            <span><i>Diseña propuestas de proyectos emprendedores para solucionar problemas o necesidades familiares y locales.</i></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">▪️</span>
+                            <span><i>Desarrolla procesos productivos con calidad, utilizando tecnologías innovadoras y alternativas en la comunidad.</i></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">▪️</span>
+                            <span><i>Planifica procesos administrativos para el desarrollo de proyectos productivos sostenibles y sustentables.</i></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold text-[#3F72AF] mb-4"><i>Competencias Blandas y del Documento Original</i></h3>
+                    <p class="text-slate-700"><i>Creatividad, pensamiento crítico, trabajo en equipo, capacidad de concentración, fuerza de voluntad y esfuerzo, productividad, liderazgo y productividad, responsabilidad, inteligencia emocional.</i></p>
+                </div>
+
+                <div class="bg-blue-900/5 border border-[#1F3C88]/20 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold text-[#1F3C88] mb-4"><i>Competencias Institucionales CM (Colegio Montano)</i></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Pensamiento crítico y resolución de problemas</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Colaboración y trabajo en equipo</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Competencias digitales</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Comunicación efectiva</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Creatividad e innovación</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Aprendizaje autónomo y adaptabilidad</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Conciencia global y cultural</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Ética y ciudadanía digital</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Gestión emocional y resiliencia</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Conciencia ecológica y sostenibilidad</i></div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm text-sm text-slate-700"><i>Desempeño de roles de liderazgo</i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB IV: INDICADORES DE LOGRO -->
+        <section id="tab-indicadores" class="tab-content hidden space-y-6">
+            <div class="border-l-4 border-[#F2C94C] pl-4">
+                <h2 class="text-2xl font-bold text-[#1F3C88]"><i>IV) Indicadores de Logro</i></h2>
+                <p class="text-xs text-[#3F72AF]"><i>Criterios de evaluación institucional</i></p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm space-y-3">
+                    <div class="text-2xl font-bold text-[#3F72AF]">01</div>
+                    <p class="text-slate-700"><i>Registra las diferentes industrias y servicios que se prestan en la comunidad.</i></p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm space-y-3">
+                    <div class="text-2xl font-bold text-[#3F72AF]">02</div>
+                    <p class="text-slate-700"><i>Diferencia las técnicas artesanales de las industriales.</i></p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm space-y-3">
+                    <div class="text-2xl font-bold text-[#3F72AF]">03</div>
+                    <p class="text-slate-700"><i>Identifica la importancia de la utilización de los indicadores de calidad en los procesos productivos.</i></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB V: MÉTODOS DIDÁCTICOS -->
+        <section id="tab-metodos" class="tab-content hidden space-y-6">
+            <div class="border-l-4 border-[#F2C94C] pl-4">
+                <h2 class="text-2xl font-bold text-[#1F3C88]"><i>V) Métodos Didácticos Institucionales</i></h2>
+                <p class="text-xs text-[#3F72AF]"><i>Modelo activo-colaborativo y Período Doble (70 minutos)</i></p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm space-y-3">
+                    <h3 class="text-lg font-bold text-[#3F72AF]"><i>Pedagogía Constructivista y Laboratorio</i></h3>
+                    <p class="text-slate-700"><i>Laboratorio con Material Concreto y enfoque constructivista activo para el desarrollo significativo de los contenidos curriculares.</i></p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm space-y-3">
+                    <h3 class="text-lg font-bold text-[#3F72AF]"><i>Metodologías Clave</i></h3>
+                    <p class="text-slate-700"><i>Aprendizaje Basado en Proyectos (ABP) y Constructivismo aplicado al emprendimiento productivo.</i></p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50/50 border border-blue-100 p-6 rounded-xl shadow-sm space-y-4">
+                <h3 class="text-lg font-bold text-[#1F3C88]"><i>Estructura del Período Doble (70 Minutos)</i></h3>
+                <div class="space-y-4 text-slate-700">
+                    <div class="bg-white p-4 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-[#3F72AF]"><i>1. Introducción Motivante</i></h4>
+                        <p class="text-sm"><i>Este paso del proceso tiene como función activar el pre-saber del alumno, al maestro le permite determinar un diagnóstico. (Cantamos, discutimos, adivinamos, lluvia de ideas y jugamos).</i></p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-[#3F72AF]"><i>2. Trabajo Individual</i></h4>
+                        <p class="text-sm"><i>En este momento del proceso el alumno pone en el lugar de trabajo toda su potencialidad como individuo, sus habilidades y destrezas que le permitan hacer un trabajo individual utilizando sus herramientas individuales. Técnicas utilizadas: el trifolio, el proyecto, carteles y estudio dirigido.</i></p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-[#3F72AF]"><i>3. Trabajo en Equipo o Trabajo Cooperativo</i></h4>
+                        <p class="text-sm"><i>En este momento del proceso educativo el alumno debe trabajar interactuando con sus compañeros desempeñando un rol y con una meta determinada. "Todos para uno y uno para todos". El alumno debe poner a la disponibilidad del grupo todas sus destrezas individuales y su desarrollo personal, unificándola con la de todos los integrantes.</i></p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-[#3F72AF]"><i>4. Plenaria</i></h4>
+                        <p class="text-sm"><i>Este momento del proceso es muy importante, ya que los alumnos fomentan el hablar en público, exponer sus sentimientos y emociones al grupo y explicar el trabajo o conclusión a la que hayan llegado. Se hace en forma rotativa para que al final todos los alumnos puedan experimentar el rol del expositor.</i></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB VI: BIBLIOGRAFÍA -->
+        <section id="tab-bibliografia" class="tab-content hidden space-y-6">
+            <div class="border-l-4 border-[#F2C94C] pl-4">
+                <h2 class="text-2xl font-bold text-[#1F3C88]"><i>VI) Bibliografía</i></h2>
+                <p class="text-xs text-[#3F72AF]"><i>Fuentes y recursos bibliográficos</i></p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm space-y-4">
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#F2C94C] font-bold">📚</span>
+                        <span><i>Proyectos 8 Productividad y Desarrollo. Santillana, Guatemala última edición.</i></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#F2C94C] font-bold">📰</span>
+                        <span><i>Publicaciones de Revistas o Periódicos que apoyen los diferentes temas.</i></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#F2C94C] font-bold">🎬</span>
+                        <span><i>Audiovisuales que refuerzan los procedimientos y contenidos.</i></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#F2C94C] font-bold">🇬🇹</span>
+                        <span><i>Guatemala, Ministerio de Educación. Malla curricular Segundo Básico.</i></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-[#F2C94C] font-bold">🔗</span>
+                        <span><i>Enlace de referencia complementaria: <a href="https://www.conekta.com/blog/tipos-de-empresas" target="_blank" class="text-[#3F72AF] underline">https://www.conekta.com/blog/tipos-de-empresas</a></i></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TAB VII: CONTENIDOS -->
+        <section id="tab-contenidos" class="tab-content hidden space-y-6">
+            <div class="border-l-4 border-[#F2C94C] pl-4">
+                <h2 class="text-2xl font-bold text-[#1F3C88]"><i>VII) Contenidos (Unidad Única)</i></h2>
+                <p class="text-xs text-[#3F72AF]"><i>Secuencia temática específica del curso</i></p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 p-6 rounded-xl shadow-sm">
+                <div class="mb-4 p-3 bg-amber-50 border border-amber-200 text-amber-800 rounded-lg text-sm">
+                    <i>Nota: Por la naturaleza del curso, corresponde a unidad única (Unidad II según plan general del Colegio Montano).</i>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-[#3F72AF]"><i>Contenidos de la Unidad II</i></h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700">
+                        <li class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">🔹</span>
+                            <span><i>Clasificación de las empresas por tamaño: unipersonal, microempresa, pequeña, mediana, gran empresa.</i></span>
+                        </li>
+                        <li class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">🔹</span>
+                            <span><i>Proceso Productivo Industrial vrs. Proceso Productivo Artesanal.</i></span>
+                        </li>
+                        <li class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">🔹</span>
+                            <span><i>Evolución de las técnicas artesanales e industriales en la producción.</i></span>
+                        </li>
+                        <li class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">🔹</span>
+                            <span><i>Campos ocupacionales tradicionales e innovadores.</i></span>
+                        </li>
+                        <li class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">🔹</span>
+                            <span><i>Proyectos innovadores ecológicos.</i></span>
+                        </li>
+                        <li class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-start gap-3">
+                            <span class="text-[#F2C94C] font-bold">🔹</span>
+                            <span><i>Responsabilidad social empresarial o corporativa.</i></span>
+                        </li>
+                        <li class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex items-start gap-3 md:col-span-2">
+                            <span class="text-[#F2C94C] font-bold">🔹</span>
+                            <span><i>Diseño y elaboración de una máscara con materiales de reuso.</i></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+        <i>Colegio Montano &copy; 2027 - Asistente Pedagógico Institucional</i>
+    </footer>
+
+    <!-- Interactive JavaScript for Tab Switching and Fullscreen -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => el.classList.add('hidden'));
+
+            // Remove active styles from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-[#F2C94C]', 'text-[#1F3C88]');
+                btn.classList.add('text-white', 'hover:bg-[#1F3C88]/50');
+            });
+
+            // Show target tab content
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Apply active styles to clicked button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('text-white', 'hover:bg-[#1F3C88]/50');
+            activeBtn.classList.add('bg-[#F2C94C]', 'text-[#1F3C88]');
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
